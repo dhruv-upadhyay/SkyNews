@@ -19,6 +19,8 @@
 		55276A3C2C248C6900C88494 /* NewsFeedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55276A372C248C6900C88494 /* NewsFeedListViewModel.swift */; };
 		55276A3F2C24A3AA00C88494 /* NewsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55276A3E2C24A3AA00C88494 /* NewsFeedView.swift */; };
 		55276A432C24A60D00C88494 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55276A422C24A60D00C88494 /* String.swift */; };
+		55276A462C252FF300C88494 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55276A452C252FF300C88494 /* Constants.swift */; };
+		554CF8A82C2539EE00C59E83 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CF8A72C2539EE00C59E83 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		55276A372C248C6900C88494 /* NewsFeedListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedListViewModel.swift; sourceTree = "<group>"; };
 		55276A3E2C24A3AA00C88494 /* NewsFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedView.swift; sourceTree = "<group>"; };
 		55276A422C24A60D00C88494 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		55276A452C252FF300C88494 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		554CF8A72C2539EE00C59E83 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +205,9 @@
 		55276A402C24A5E200C88494 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				554CF8A62C2539DC00C59E83 /* NetworkService */,
 				55276A412C24A5EF00C88494 /* Extension */,
+				55276A452C252FF300C88494 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -212,6 +218,14 @@
 				55276A422C24A60D00C88494 /* String.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		554CF8A62C2539DC00C59E83 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				554CF8A72C2539EE00C59E83 /* NetworkService.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,9 +358,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554CF8A82C2539EE00C59E83 /* NetworkService.swift in Sources */,
 				552769FB2C246FAA00C88494 /* SkyNewsApp.swift in Sources */,
 				55276A3C2C248C6900C88494 /* NewsFeedListViewModel.swift in Sources */,
 				55276A3B2C248C6900C88494 /* NewsFeedListView.swift in Sources */,
+				55276A462C252FF300C88494 /* Constants.swift in Sources */,
 				55276A3F2C24A3AA00C88494 /* NewsFeedView.swift in Sources */,
 				55276A432C24A60D00C88494 /* String.swift in Sources */,
 				55276A322C2475F400C88494 /* SplashScreenView.swift in Sources */,

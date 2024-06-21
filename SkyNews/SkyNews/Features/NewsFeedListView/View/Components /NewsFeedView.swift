@@ -7,32 +7,42 @@
 
 import SwiftUI
 
+// NewsFeedView displays a single news item, including its image, title, description, and a "Read More" link.
 struct NewsFeedView: View {
+    
+    // The news item to be displayed
     var item: NewsFeedListModel
+    
     var body: some View {
         VStack(alignment: .leading) {
+            
+            // Link to the news item's URL
             Link(destination: item.link) {
                 VStack(alignment: .leading) {
+                    
+                    // Display the news item's image if available
                     if let imageUrl = item.imageUrl {
                         AsyncImage(url: imageUrl) { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(height: 200)
+                                .frame(height: Sizes.s200)
                                 .clipped()
                         } placeholder: {
+                            
+                            // Placeholder image and progress indicator while loading
                             ZStack {
-                                Image("news-default-palceholder")
+                                Image(Images.newsDefaultPlaceholder)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(height: 200)
+                                    .frame(height: Sizes.s200)
                                     .clipped()
                                 ProgressView()
                             }
-                            
                         }
                     }
                     
-                    VStack(alignment: .leading, spacing: 8) {
+                    // Display the news item's title and description
+                    VStack(alignment: .leading, spacing: Sizes.s8) {
                         Text(item.title)
                             .font(.headline)
                             .foregroundColor(.black)
@@ -41,14 +51,15 @@ struct NewsFeedView: View {
                             .font(.subheadline)
                             .foregroundColor(.gray)
                             .multilineTextAlignment(.leading)
+                        
+                        // "Read More" link at the bottom right
                         HStack {
                             Spacer()
-                            Text("Read more")
+                            Text(Titles.readMore)
                                 .font(.caption)
                                 .foregroundColor(.blue)
                                 .multilineTextAlignment(.leading)
                         }
-                        
                     }
                     .padding()
                 }
@@ -57,6 +68,7 @@ struct NewsFeedView: View {
     }
 }
 
+// Preview
 #Preview {
-    NewsFeedView(item: NewsFeedListModel(title: "England have missed out on automatically qualifying for the knockout stages of the Euros tonight after drawing 1-1 to Denmark.", description: "The Three Lions remain on top of Group C with four points and need at least a draw against Slovenia on Tuesday to guarantee a place in the round of 16.", link: URL(string: "https://news.sky.com/story/england-draw-against-denmark-after-squandering-one-goal-lead-13156220")!, imageUrl: URL(string: "https://e3.365dm.com/24/02/2048x1152/skynews-breaking-news-breaking_6449241.jpg?20240209070741")!))
+    NewsFeedView(item: NewsFeedListModel(title: MockData.newsTitle, description: MockData.newsDesc, link: MockData.newsLink, imageUrl: MockData.newsImage))
 }

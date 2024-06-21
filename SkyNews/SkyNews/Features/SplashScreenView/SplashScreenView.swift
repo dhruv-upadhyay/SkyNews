@@ -7,23 +7,24 @@
 
 import SwiftUI
 
+// View representing a splash screen
 struct SplashScreenView: View {
     var body: some View {
         ZStack {
             Color.white
                 .ignoresSafeArea()
-            Image("logo")
+            Image(Images.logo)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200, height: 200)
-                .cornerRadius(16)
+                .frame(width: Sizes.s200, height: Sizes.s200)
+                .cornerRadius(Sizes.s16)
         }
     }
 }
 
+// Preview
 struct SplashScreenView_Previews: PreviewProvider {
     static var previews: some View {
         SplashScreenView()
     }
 }
-
